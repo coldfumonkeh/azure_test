@@ -1,0 +1,40 @@
+{
+    "name":"Azure Test",
+    "slug":"azure-test",
+    "version":"2.0.1",
+    "author":"Matt Gifford (https://www.monkehworks.com)",
+    "location":"coldfumonkeh/azure_test#v2.0.1",
+    "directory":"",
+    "createPackageDirectory":"true",
+    "homepage":"https://github.com/coldfumonkeh/azure_test",
+    "documentation":"https://github.com/coldfumonkeh/azure_test",
+    "type":"projects",
+    "repository":{
+        "type":"git",
+        "URL":"https://github.com/coldfumonkeh/azure_test.git"
+    },
+    "bugs":"https://github.com/coldfumonkeh/azure_test/issues",
+    "shortDescription":"Test repo",
+    "keywords":[
+        "oauth2",
+        "api"
+    ],
+    "scripts":{
+        "postVersion":"package set location='coldfumonkeh/azure_test#v`package version`'",
+        "onRelease":"publish",
+        "postPublish":"!git push --follow-tags"
+    },
+    "private":"false",
+    "ignore":[
+        "**/.*",
+        "test",
+        "tests"
+    ],
+    "dependencies":{},
+    "devDependencies":{
+        "testbox":"^2.5.0+107"
+    },
+    "installPaths":{
+        "testbox":"testbox/"
+    }
+}
