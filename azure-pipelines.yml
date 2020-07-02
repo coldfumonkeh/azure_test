@@ -1,0 +1,18 @@
+trigger:
+- master
+
+# image: ortussolutions/commandbox:lucee5-alpine
+
+stages:
+- stage: Test
+  jobs:
+  - job: Lucee4
+    container:
+      image: ortussolutions/commandbox
+    steps:
+    - task: Lucee4UnitTests
+      displayName: Lucee 4 Unit Tests
+    - script: | 
+        box install production=false
+        box server start cfengine=lucee@4
+        box testbox run outputFile=./test-reports/junit-lucee-4.xml reporter=junit
